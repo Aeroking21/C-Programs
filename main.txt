@@ -1,0 +1,54 @@
+
+# # Program uses simple recursion to change the values
+# # Base cases are used to keep the recursion in control
+# def algo(arr, startRow, startCol, row, col):
+
+# 	if(startRow > row or startCol > col or startRow < 0 or startCol < 0):
+# 		return
+	
+
+# 	# This line make sure the filling in only occurs when it isn't 1 or 2
+# 	if(arr[startRow][startCol] == 1 or arr[startRow][startCol] == 2):
+# 		return
+	
+
+# 	arr[startRow][startCol] = 2
+
+# 	algo(arr, startRow-1, startCol, row, col)
+# 	algo(arr, startRow, startCol+1, row, col)
+# 	algo(arr, startRow+1, startCol, row, col)
+# 	algo(arr, startRow, startCol-1, row, col)
+
+
+# # Main function to which input list and tuple are called
+# def welcome(maze, input_tuple):
+
+# 	x_coord = input_tuple[0]
+# 	y_coord = input_tuple[1]
+
+# 	x_size = len(maze[0])
+# 	y_size = len(maze)
+
+# 	# I subtract -1 from the y_size as it is 0 based indexing
+# 	algo(maze, x_coord, y_coord, y_size-1, x_size-1)
+
+# 	print ("Updated maze after algorithm is finished :")
+# 	# Code to ouput 
+# 	for i in range(y_size):
+# 		for j in range(x_size):
+# 			print(maze[i][j], end=" ")
+# 		print()
+	
+
+# # Change input_image and input_tuple, to see how program works
+# input_image = [
+#   [0, 0, 0, 0, 0, 0],
+#   [1, 0, 1, 1, 1, 0],
+#   [0, 1, 0, 0, 0, 1],
+# 	[0, 0, 1, 1, 1, 0],
+# 	[0, 0, 0, 0, 0, 0]
+# ];
+
+# input_tuple = (0,5)
+
+# welcome(input_image, input_tuple)
